@@ -54,4 +54,34 @@ public class BiblioSort {
             }
         }
     }
+    
+    
+    //Code for Quick Sort
+    public static void quickSort(int[] array, int start, int end){
+        if (start < end){
+            int positionP = split(array, start, end);
+            quickSort(array, start, positionP - 1);
+            quickSort(array, positionP + 1, end);
+        }
+    }
+    
+    public static int split(int[] array, int start, int end){
+        int base = array[start];
+        int tStart = start + 1, tEnd = end;
+        while (tStart <= tEnd){
+            if (array[tStart] <= base){
+                tStart++;
+            } else if (base < array[tEnd]){
+                tEnd--;
+            } else {
+                int swtch = array[tStart];
+                array[tStart] = array[tEnd];
+                array[tEnd] = swtch;
+                tStart++;
+            }
+        }
+        array[start] = array[tEnd];
+        array[tEnd] = base;
+        return tEnd;
+    }
 }
