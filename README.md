@@ -6,3 +6,4 @@ Adicionado os seguintes algoritmos de ordenação:
 * Insertion Sort
 * Selection Sort
 * Bubble Sort
+* Quick Sort
